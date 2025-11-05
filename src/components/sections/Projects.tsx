@@ -10,8 +10,8 @@ const Projects = () => {
       github: null,
     },
     {
-      title: "SmartSense",
-      description: "Predictive Safety Analytics System that identifies risk-prone situations using real-time data and pattern recognition.",
+      title: "Shasthra Techathon",
+      description: "Predictive analysis that predicts temperature data using real-time data and pattern recognition.",
       tech: ["Python", "Machine Learning", "OpenCV", "Flask"],
       github: "#",
       highlight: "Top 50 Finalist – Shaastra Techathon, IIT Madras",

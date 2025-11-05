@@ -31,7 +31,9 @@ const Contact = () => {
               <Github className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors" />
             </a>
             <a
-              href="mailto:numayalnatarajan@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&to=numayalnatarajan@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-6 glass rounded-full glow-hover group"
             >
               <Mail className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors" />
