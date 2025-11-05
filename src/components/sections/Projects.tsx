@@ -87,18 +87,6 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-
-              {project.github && (
-                <Button
-                  variant="outline"
-                  className="w-full group"
-                  onClick={() => window.open(project.github, "_blank")}
-                >
-                  <Github className="w-4 h-4 mr-2" />
-                  View Code
-                  <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Button>
-              )}
             </div>
           ))}
         </div>

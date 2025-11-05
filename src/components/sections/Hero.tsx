@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <p className="text-lg text-muted-foreground">Hi, I'm</p>
-            <h1 className="text-6xl md:text-7xl font-bold gradient-text leading-tight font-serif tracking-wide">
+            <h1 className="text-6xl md:text-7xl font-bold text-primary leading-tight font-serif tracking-wide">
               N. Umayal
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-light">
@@ -28,7 +28,7 @@ const Hero = () => {
                 View Projects
               </Button>
               <Button
-                onClick={() => window.open("/Umayal_N_Resume.pdf", "_blank")}
+                onClick={() => window.open("https://drive.google.com/file/d/18vM9iH6LBp1KFt9en7eNBm-OpEdIRuMF/view?usp=sharing", "_blank")}
                 variant="outline"
                 size="lg"
                 className="glow-hover"
