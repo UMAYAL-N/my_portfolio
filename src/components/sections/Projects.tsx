@@ -7,7 +7,14 @@ const Projects = () => {
       title: "PrioQ",
       description: "Intelligent Queue Optimization System using AI-powered crowd detection and dynamic wait-time estimation.",
       tech: ["Python", "OpenCV", "Flask", "React", "MongoDB"],
+      github: null,
+    },
+    {
+      title: "SmartSense",
+      description: "Predictive Safety Analytics System that identifies risk-prone situations using real-time data and pattern recognition.",
+      tech: ["Python", "Machine Learning", "OpenCV", "Flask"],
       github: "#",
+      highlight: "Top 50 Finalist – Shaastra Techathon, IIT Madras",
     },
     {
       title: "CopBot",
@@ -34,9 +41,15 @@ const Projects = () => {
       github: "#",
     },
     {
-      title: "WeatherCast & PinToProgress",
-      description: "Live weather monitor and personal productivity tracker showcasing strong UI and API integration skills.",
-      tech: ["HTML", "CSS", "JavaScript", "APIs"],
+      title: "WeatherCast",
+      description: "Live weather monitor powered by OpenWeather API showing forecast and temperature data with responsive design.",
+      tech: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+      github: "#",
+    },
+    {
+      title: "PinToProgress",
+      description: "Personal productivity tracker using LocalStorage for goal tracking and daily updates with optimized UI.",
+      tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
       github: "#",
     },
   ];
@@ -58,6 +71,12 @@ const Projects = () => {
               <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{project.description}</p>
 
+              {project.highlight && (
+                <p className="text-sm text-primary font-medium bg-primary/10 px-3 py-1 rounded-lg">
+                  🏅 {project.highlight}
+                </p>
+              )}
+
               <div className="flex flex-wrap gap-2">
                 {project.tech.map((tech, i) => (
                   <span
@@ -69,15 +88,17 @@ const Projects = () => {
                 ))}
               </div>
 
-              <Button
-                variant="outline"
-                className="w-full group"
-                onClick={() => window.open(project.github, "_blank")}
-              >
-                <Github className="w-4 h-4 mr-2" />
-                View Code
-                <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </Button>
+              {project.github && (
+                <Button
+                  variant="outline"
+                  className="w-full group"
+                  onClick={() => window.open(project.github, "_blank")}
+                >
+                  <Github className="w-4 h-4 mr-2" />
+                  View Code
+                  <ExternalLink className="w-4 h-4 ml-2 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Button>
+              )}
             </div>
           ))}
         </div>

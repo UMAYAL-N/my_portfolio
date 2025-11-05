@@ -12,7 +12,7 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <p className="text-lg text-muted-foreground">Hi, I'm</p>
-            <h1 className="text-6xl md:text-7xl font-bold gradient-text leading-tight">
+            <h1 className="text-6xl md:text-7xl font-bold gradient-text leading-tight font-serif tracking-wide">
               N. Umayal
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground font-light">

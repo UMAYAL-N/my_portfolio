@@ -31,7 +31,7 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "linkedin.com/in/umayal-n-1a606631b",
-      href: "https://linkedin.com/in/umayal-n-1a606631b",
+      href: "https://www.linkedin.com/in/umayal-n-1a606631b",
     },
     {
       icon: Github,
@@ -115,7 +115,7 @@ const Contact = () => {
 
         <div className="flex justify-center gap-6 mt-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           <a
-            href="https://linkedin.com/in/umayal-n-1a606631b"
+            href="https://www.linkedin.com/in/umayal-n-1a606631b"
             target="_blank"
             rel="noopener noreferrer"
             className="p-4 glass rounded-full glow-hover group"
