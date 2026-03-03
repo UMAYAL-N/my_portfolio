@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isDark, setIsDark] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (isDark) {
@@ -38,6 +39,7 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     element?.scrollIntoView({ behavior: "smooth" });
+    setMenuOpen(false); // close mobile menu when navigating
   };
 
   const navLinks = [
@@ -58,22 +60,51 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-medium transition-all duration-300 relative group ${
-                  activeSection === link.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
-                }`}
-              >
-                {link.label}
-                {activeSection === link.id && (
-                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
-                )}
-              </button>
-            ))}
+          <div className="flex items-center gap-4">
+            {/* mobile menu toggle */}
+            <button
+              className="md:hidden p-2 rounded-md hover:bg-primary/10"
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+
+            {/* desktop links */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`text-sm font-medium transition-all duration-300 relative group ${
+                    activeSection === link.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                  {activeSection === link.id && (
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
+                  )}
+                </button>
+              ))}
+            </div>
           </div>
+          
+          {/* mobile dropdown */}
+          {menuOpen && (
+            <div className="md:hidden absolute top-full left-0 right-0 bg-muted/90 backdrop-blur-sm flex flex-col items-center gap-4 py-4">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className={`text-base font-medium transition-all duration-300 relative group ${
+                    activeSection === link.id ? "text-primary" : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="flex items-center gap-4">
             <Button
