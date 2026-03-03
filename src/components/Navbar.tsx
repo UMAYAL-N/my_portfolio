@@ -16,7 +16,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "education", "experience", "leadership", "projects", "achievements", "skills", "volunteering", "books", "hobbies", "contact"];
+      const sections = ["home", "about", "education", "experience", "leadership", "projects", "achievements", "skills", "volunteering", "hobbies", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -50,7 +50,6 @@ const Navbar = () => {
     { id: "achievements", label: "Achievements" },
     { id: "skills", label: "Skills" },
     { id: "volunteering", label: "Volunteering" },
-    { id: "books", label: "Books" },
     { id: "hobbies", label: "Hobbies" },
     { id: "contact", label: "Contact" },
   ];
@@ -87,7 +86,7 @@ const Navbar = () => {
             </Button>
 
             <Button
-              onClick={() => window.open("https://drive.google.com/file/d/18vM9iH6LBp1KFt9en7eNBm-OpEdIRuMF/view?usp=sharing", "_blank")}
+              onClick={() => window.open("/Umayal_N_Resume.pdf", "_blank")}
               className="bg-primary text-primary-foreground hover:bg-primary/90 glow-hover"
             >
               Resume

@@ -8,7 +8,6 @@ import Projects from "@/components/sections/Projects";
 import Achievements from "@/components/sections/Achievements";
 import Skills from "@/components/sections/Skills";
 import Volunteering from "@/components/sections/Volunteering";
-import Books from "@/components/sections/Books";
 import Hobbies from "@/components/sections/Hobbies";
 import Contact from "@/components/sections/Contact";
 
@@ -25,7 +24,6 @@ const Index = () => {
       <Achievements />
       <Skills />
       <Volunteering />
-      <Books />
       <Hobbies />
       <Contact />
     </div>

@@ -1,14 +1,29 @@
-import { Code2, Users } from "lucide-react";
-
 const Skills = () => {
   const technicalSkills = [
-    "Python", "C++", "HTML", "CSS", "JavaScript", "React",
-    "GitHub", "MySQL", "Node.js", "Flask", "MongoDB"
+    {
+      category: "Programming Languages",
+      skills: ["Python", "Java", "C++", "C"]
+    },
+    {
+      category: "Frontend",
+      skills: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      category: "Database",
+      skills: ["MySQL"]
+    },
+    {
+      category: "Tools",
+      skills: ["Git", "GitHub", "PowerBI", "AutoCAD"]
+    }
   ];
 
   const softSkills = [
-    "Leadership", "Communication", "Team Management",
-    "Problem Solving", "Creativity"
+    "Leadership",
+    "Communication",
+    "Team Management",
+    "Problem Solving",
+    "Creativity"
   ];
 
   return (
@@ -18,40 +33,41 @@ const Skills = () => {
           Skills
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="p-8 glass rounded-xl space-y-6 animate-fade-in glow-hover">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <Code2 className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold">Technical Skills</h3>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              {technicalSkills.map((skill, index) => (
-                <span
+        <div className="space-y-8 max-w-4xl mx-auto animate-fade-in">
+          {/* Technical Skills Section */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-primary">Technical Skills</h3>
+            <div className="grid grid-cols-1 gap-6">
+              {technicalSkills.map((skillGroup, index) => (
+                <div
                   key={index}
-                  className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors cursor-default"
+                  className="p-6 glass rounded-xl space-y-4 glow-hover"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {skill}
-                </span>
+                  <h4 className="text-lg font-semibold text-foreground">{skillGroup.category}</h4>
+                  <div className="flex flex-wrap gap-3">
+                    {skillGroup.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-4 py-2 bg-primary/10 text-primary rounded-lg font-medium hover:bg-primary/20 transition-colors cursor-default"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
 
-          <div className="p-8 glass rounded-xl space-y-6 animate-fade-in glow-hover" style={{ animationDelay: "0.2s" }}>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-3 bg-accent/10 rounded-lg">
-                <Users className="w-6 h-6 text-primary" />
-              </div>
-              <h3 className="text-2xl font-bold">Soft Skills</h3>
-            </div>
-
+          {/* Soft Skills Section */}
+          <div className="p-8 glass rounded-xl space-y-6 glow-hover" style={{ animationDelay: "0.5s" }}>
+            <h3 className="text-2xl font-bold text-primary">Soft Skills</h3>
             <div className="flex flex-wrap gap-3">
               {softSkills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-4 py-2 bg-accent/10 text-foreground rounded-full font-medium hover:bg-accent/20 transition-colors cursor-default"
+                  className="px-4 py-2 bg-accent/10 text-foreground rounded-lg font-medium hover:bg-accent/20 transition-colors cursor-default"
                 >
                   {skill}
                 </span>
